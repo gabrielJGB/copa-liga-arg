@@ -1,8 +1,9 @@
 {
-    "name": "React PWA",
-    "short_name": "reactpwa",
-    "description": "Modern web application",
-    "theme_color": "#ffffff",
+    "name": "Copa de la Liga 2023",
+    "short_name": "CopaDeLaLiga",
+    "description": "Copa de la Liga 2023",
+    "theme_color": "#004b7a",
+    "background_color" : "#004b7a",
     "icons": [
       {
         "src": "pwa-192x192.png",
