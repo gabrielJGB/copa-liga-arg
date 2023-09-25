@@ -1,0 +1,146 @@
+.fixture_container{
+    
+    
+}
+.fixture_zone{
+    text-align: center;
+    color: #161616;
+    background-color: #e0e0e0;
+    font-size: 14px;
+    padding:5px;
+}
+
+.fixture_date{
+    text-align: center;
+    background-color: #161616;
+    font-size: 14px;
+    padding:5px;
+}
+
+.fixture_match{
+    display: grid;
+    grid-template-columns: 0.3fr 1fr 0.2fr 0.2fr 1fr 0.3fr;
+    >div{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap:3px;
+        padding: 3px;
+        background-color: #212229;
+        margin:1px;
+        font-size: 13px;
+    }
+
+  
+}
+.fixture_cronometro-jugando{
+    transition: all 0.5s;
+    background-color:#831c1c !important;
+    animation: blinkingColor 1.5s infinite;
+}
+
+@keyframes blinkingColor {
+  0% {
+    color: #ffffff;
+  }
+
+  50% {
+    color: #c7a2a2;
+  }
+
+  100% {
+    color: #ffffff;
+  }
+}
+
+.fixture_cronometro-finalizado{
+    transition: all 0.5s;
+    background-color:#131d28!important
+}
+
+
+.fixture_equipo-info{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.fixture_match-goles{
+    font-size: 15px !important;
+}
+
+
+.fixture_match-button{
+    $disabled_color:#4e5766;
+    border:0;
+    color:#e6e6e6;
+    background-color: #2d4063;
+    margin: 1px;
+    font-size: 16px;
+    &:hover{
+        background-color: #233f74;
+    }
+    &:disabled{
+        color:$disabled_color;
+        background-color: $disabled_color;
+    }
+}
+
+.fixture_match-info{
+    
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr ;
+    background-color: transparent;
+    padding: 0 !important;
+       
+    
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease-in-out;
+
+    >div{
+        margin: 1px;
+        background-color: #222222;
+        font-size: 13px;
+    }
+    >button{
+        margin:1px;
+        outline: none;
+    }
+}
+
+.fixture_autores-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding:2px
+}
+
+.fixture_autor{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap:4px
+}
+
+.fixture_button-resumen{
+    border:0;
+    padding:5px 0;
+    grid-area: 2/1/3/3;
+    background-color: #317a2f;
+    color: white;
+    &:hover{
+        background-color: #338a30;
+    }
+}
+
+
+.red-card {
+    width: 5px;
+    height: 8px;
+    background-color: #b50000;
+    
+  }

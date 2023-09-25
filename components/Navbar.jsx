@@ -3,8 +3,8 @@ import Navbar from 'react-bootstrap/Navbar'
 import Container from 'react-bootstrap/Container'
 import { Link } from 'react-router-dom'
 
-import '../src/styles/Navbar.css'
-import c from '../src/styles/colors'
+import '../src/styless/Navbar.css'
+import c from '../src/styless/colors'
 
 const NavBar = () => {
   return (

@@ -1,73 +1,57 @@
 import React, { useContext, useEffect, useState } from 'react'
-import { StandingsTable, FixtureTable, FixtureArrows, FixtureButtons, Bracket, ScorersTable } from '../components'
+import { StandingsTable, Fixture, FixtureArrows, FixtureButtons, Bracket, ScorersTable, MatchModal } from '../components'
 import { DataContext } from '../context/DataContext'
-import '../src/styles/Home.css'
+
 
 const Home = () => {
   const data = useContext(DataContext)
-  const [tablas, setTablas] = useState(false)
-
-
-  useEffect(() => {
-    if (data.tablas) {
-      setTablas(data.tablas)
-    }
-  }, [data.tablas])
-
 
 
   if (data.cargando) {
     return (
-      <div> Cargando...</div>
-    )
-  } 
-  
-  if (data.error || !tablas) {
-    return (
-      <div style={{padding:"15px"}}>
-        <h2>Ha ocurrido un error</h2>
-        <div style={{color:"gray"}}>{data.error.message}</div>
-      </div>
+      <div style={{padding:"20px"}}> Cargando...</div>
     )
   }
 
+
+
   return (
-    <div className='main-container'>
+    <div className="home_container">
 
+      {
+        data.error || !data.tablas ?
+          <h3 className='home_error'>Ha ocurrido un error :(</h3>
+          :
 
-
-      <>
-        <div className='upper-container'>
-          <div className="standings-tables-container">
-
-            <StandingsTable tabla={tablas.info_tabla_1} zona="A" />
-            <StandingsTable tabla={tablas.info_tabla_2} zona="B" />
-
-          </div>
-
-          <div className="fixture-table-container">
-            <div className="fixture-table-container-header">
-              <FixtureButtons />
-              <FixtureArrows />
+          <>
+            <div className="home_main-container">
+              <div className="home_table-container">
+                <StandingsTable tabla={data.tablas.info_tabla_1} zona="A" />
+                <StandingsTable tabla={data.tablas.info_tabla_2} zona="B" />
+              </div>
+              <div className='home_fixture-container'>
+                <FixtureButtons />
+                <FixtureArrows />
+                <Fixture />
+              </div>
             </div>
-            <FixtureTable />
-          </div>
-        </div>
 
-        <div className="bracket-container">
-          {
-            tablas ?
-              <Bracket tablas={tablas} />
+            <div className='home_bracket-container'>
+              <Bracket tablas={data.tablas} />
+            </div>
+
+
+            {
+              data.matchDisplay?
+              <MatchModal id={data.matchDisplay}/>
               :
               <></>
-          }
-        </div>
+            }
+          </>
 
-        
-      </>
+      }
 
     </div>
-
 
   )
 }

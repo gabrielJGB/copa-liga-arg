@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, useState } from 'react'
 import { DataContext } from '../../context/DataContext'
-import '../../src/styles/TeamRow.css'
+import '../../src/styless/TeamRow.css'
 
 const TeamRow = (props) => {
     const data = useContext(DataContext)

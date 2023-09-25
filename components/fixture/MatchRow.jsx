@@ -1,7 +1,7 @@
 import Button from 'react-bootstrap/Button';
 import React, { useContext, useEffect, useState } from 'react'
 import { DataContext } from '../../context/DataContext';
-import '../../src/styles/MatchRow.css'
+import '../../src/styless/MatchRow.css'
 import ball from '../../src/assets/ball.png'
 
 const MatchRow = (props) => {
@@ -104,7 +104,7 @@ const MatchRow = (props) => {
                     }
                 </td>
             </tr>
-            <tr style={{ display: (!displayInfo || (!(props.match.goles_local) && !(props.match.goles_visitante)) ? "none" : "table-row") }} >
+            <tr style={{backgroundColor:"0f3c3d", display: (!displayInfo || (!(props.match.goles_local) && !(props.match.goles_visitante)) ? "none" : "table-row") }} >
                 <td colSpan={3}>
                     {
                         props.match.autores_local.map((autores, i) => {
@@ -122,7 +122,7 @@ const MatchRow = (props) => {
                         })
                     }
                 </td>
-                <td style={{ textAlign: "center" }} colSpan={3}>
+                <td style={{textAlign: "center" }} colSpan={3}>
                     {
                         props.match.autores_visitante.map((autores, i) => {
 

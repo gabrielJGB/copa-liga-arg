@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import '../../src/styles/BracketMatch.css'
+import '../../src/styless/BracketMatch.css'
 
 const BracketMatch = (props) => {
     const img_size = 15

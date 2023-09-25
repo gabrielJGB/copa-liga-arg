@@ -1,0 +1,42 @@
+body{
+    background-color: #302f2f;
+    color:#ffffff
+}
+
+.home_container {
+    
+}
+
+.home_main-container{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin: auto;
+    padding: 40px 20px;
+    width:90%;
+    gap:100px;
+    
+}
+
+.home_table-container{
+    display: flex;
+    flex-direction: column;
+    grid-area: 1/1/2/2;
+    
+}
+
+.home_error{
+    padding:20px;
+}
+
+@media screen and (max-width:800px) {
+    .home_main-container {
+        padding: 40px 0;
+        gap:50px;
+        grid-template-columns: 1fr;
+        width: 100%;
+    }
+
+    .home_bracket-container{
+        padding-bottom: 40px;
+    }
+}

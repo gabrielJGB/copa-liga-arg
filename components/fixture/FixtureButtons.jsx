@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import '../../src/styles/FixtureButtons.css'
+import '../../src/styless/FixtureButtons.css'
 import Button from 'react-bootstrap/Button';
 import { DataContext } from '../../context/DataContext';
 

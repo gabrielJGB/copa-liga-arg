@@ -1,26 +1,16 @@
-import React, { useContext, useEffect, useState } from 'react'
+import React from 'react'
 import Table from 'react-bootstrap/Table'
 import TeamRow from './TeamRow'
-import '../../src/styles/StandingsTable.css'
-import c from '../../src/styles/colors'
-import { DataContext } from '../../context/DataContext'
 
 const StandingsTable = (props) => {
 
-const [tabla, setTabla] = useState([])
-
-useEffect(() => {
-  setTabla(props.tabla)  
-  
-}, [props.tabla])
-
-
-
 
   return (
-    <div className="standings-table">
-      <div className='standings-title' style={{color:c.light_1}}>Zona {props.zona}</div>
-      <Table bordered  variant='dark' >
+    <div className="standings-table_container">
+      <div className='standings-table_title' >
+        Zona {props.zona}
+      </div>
+      <Table bordered variant='dark' >
         <thead>
           <tr>
             <th>#</th>
@@ -38,8 +28,8 @@ useEffect(() => {
         <tbody>
 
           {
-            tabla.map((equipo,i)=>(
-              <TeamRow equipo={equipo} key={i}/>
+            props.tabla.map((equipo, i) => (
+              <TeamRow equipo={equipo} key={i} />
             ))
           }
 

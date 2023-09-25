@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from 'react'
-import '../../src/styles/Bracket.css'
+import '../../src/styless/Bracket.css'
 import BracketMatch from './BracketMatch'
 import { DataContext } from '../../context/DataContext'
 

@@ -1,5 +1,5 @@
 import React from 'react'
-import '../../src/styles/ZoneRow.css'
+import '../../src/styless/ZoneRow.css'
 
 const DateRow = (props) => {
     return (

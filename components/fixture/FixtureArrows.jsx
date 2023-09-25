@@ -1,6 +1,6 @@
 import React, { useContext } from 'react'
 import Button from 'react-bootstrap/Button'
-import '../../src/styles/FixtureArrows.css'
+import '../../src/styless/FixtureArrows.css'
 import { DataContext } from '../../context/DataContext'
 
 const FixtureArrows = () => {

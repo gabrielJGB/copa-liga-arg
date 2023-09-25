@@ -3,7 +3,7 @@ import DataProvider from '../context/DataContext'
 import Home from '../pages/Home'
 import Layout from '../pages/Layout'
 
-import './styles/App.css'
+import './styles/styles.scss'
 
 const App = () => {
 

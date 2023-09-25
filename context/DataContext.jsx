@@ -9,7 +9,10 @@ export const DataContext = createContext({
   setSelected: () => { },
   obj: null,
   setObj: () => { },
-  error:null
+  error:null,
+  matchDisplay:null, 
+  setMatchDisplay:()=>{}
+
 })
 
 export function DataProvider({ children }) {
@@ -19,6 +22,7 @@ export function DataProvider({ children }) {
   const [error, setError] = useState(false)
   const [obj, setObj] = useState(false)
   const [partidosJugando, setPartidosJugando] = useState(false)
+  const [matchDisplay, setMatchDisplay] = useState(false)
 
   // useEffect(() => {
   //   //fetchScores() descomentar
@@ -73,6 +77,8 @@ let interval = null
     interval = setInterval(() => {
       fetchScores()
     }, 30000);
+
+fetchScores()
 
   }, [])
 
@@ -184,6 +190,7 @@ let interval = null
   }
 
   const fetchScores = () => {
+    
     let date = new Date().getTime()
 
     let url = "https://api.allorigins.win/raw?url=https://www.promiedos.com.ar/scores84mjd7.json?_=" + date
@@ -378,7 +385,9 @@ let interval = null
     setSelected,
     obj,
     setObj,
-    error
+    error,
+    matchDisplay, 
+    setMatchDisplay
 
   }
 
