@@ -27,11 +27,12 @@ $history: #212529;
     
     button {
         font-size: 13px;
-        padding: 10px 7px;
-        border: 0;
+        padding: 15px 20px;
+        
     }
 
 }
+$close_button_color: rgb(255, 255, 255);
 
 .historial_header_equipo {
     display: flex;
@@ -44,16 +45,18 @@ $history: #212529;
 
 .historial_header_close-button {
 
-    background-color: #ffffff;
-    color: #000000;
+    background-color: transparent;
+    border:solid 1px $close_button_color;
+    color: $close_button_color;
 
     &:hover {
-        background-color: #ebebeb;
+        background-color: $close_button_color;
+        color:rgb(0, 0, 0);
     }
 }
 
 .historial_header_team-button {
-
+    display: none;
     background-color: #0058dd;
     color: white;
 
@@ -77,7 +80,7 @@ $history: #212529;
     >div {
         text-align: center;
         background-color: $history;
-        padding: 5px 0;
+        padding: 9px 0;
         margin: 1px;
         transition: all 0.2s ease-in-out;
     }
@@ -98,7 +101,7 @@ $history: #212529;
     }
   
     50% {
-        background-color: #831c1c;
+        background-color: #913030;
     }
   
     100% {
@@ -118,5 +121,13 @@ $history: #212529;
     .historial_row:hover{
         transform: scale(1);
     }
+    .historial_container {
+        width:270px
+    }
 
+    .historial_header_close-button:hover{
+
+        background-color: transparent;
+     
+    }
 }

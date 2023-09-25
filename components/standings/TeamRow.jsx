@@ -44,7 +44,10 @@ const TeamRow = (props) => {
                 data.setSelectedTeam(props.equipo)
                 data.setOpenHistory(true)
             }}
-            className="standings-table_row" >
+            className="standings-table_row" 
+            // style={{transform: `translateX(${data.selectedTeam.equipo===props.equipo.equipo?"10px":"0"})`}}
+
+            >
 
             <td>{props.equipo.posicion}</td>
 

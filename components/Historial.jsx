@@ -33,7 +33,10 @@ const Historial = () => {
                 </div>
                 <div>
                     <button className='historial_header_team-button' onClick={() => { }}>Plantel</button>
-                    <button className='historial_header_close-button' onClick={() => { data.setOpenHistory(false) }}>Cerrar</button>
+                    <button className='historial_header_close-button' onClick={() => {
+                         data.setOpenHistory(false) 
+                         data.setSelectedTeam(false)
+                    }}>	Cerrar </button>
                 </div>
             </div>
 
