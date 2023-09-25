@@ -2,6 +2,22 @@
     
     
 }
+
+.fixture_buttons{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap:13px
+}
+
+.fixture_buttons > .btn{
+
+    width: 40px !important;
+    height: 40px !important;
+}
+
 .fixture_zone{
     text-align: center;
     color: #161616;
@@ -19,7 +35,7 @@
 
 .fixture_match{
     display: grid;
-    grid-template-columns: 0.3fr 1fr 0.2fr 0.2fr 1fr 0.3fr;
+    grid-template-columns: 0.4fr 1fr 0.2fr 0.2fr 1fr 0.4fr;
     >div{
         display: flex;
         justify-content: center;
@@ -143,4 +159,10 @@
     height: 8px;
     background-color: #b50000;
     
+  }
+
+  @media screen and (max-width:800px) {
+        .fixture_container * {
+            font-size: 12px !important;
+        }
   }

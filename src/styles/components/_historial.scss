@@ -1,0 +1,122 @@
+$width: 300px;
+
+.historial_container {
+    position: fixed;
+    // overflow-y: scroll;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    width: $width;
+    background-color: #373b3e;
+    transform: translateX($width); //hide
+    transition: all 0.3s ease-out;
+    box-shadow: 0 0 50px black;
+
+
+}
+
+$history: #212529;
+
+.historial_header {
+    background-color: $history;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1px;
+    
+    button {
+        font-size: 13px;
+        padding: 10px 7px;
+        border: 0;
+    }
+
+}
+
+.historial_header_equipo {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    padding-left:7px;
+}
+
+.historial_header_close-button {
+
+    background-color: #ffffff;
+    color: #000000;
+
+    &:hover {
+        background-color: #ebebeb;
+    }
+}
+
+.historial_header_team-button {
+
+    background-color: #0058dd;
+    color: white;
+
+    &:hover {
+        background-color: #237bff;
+    }
+}
+
+.historial_body {
+    display: flex;
+    flex-direction: column;
+    font-size: 12px;
+}
+
+.historial_row {
+    display: grid;
+    grid-template-columns: 0.4fr 0.7fr 0.3fr 2fr 0.6fr;
+    width: 100%;
+    transition: all 0.3s ease-in-out;
+
+    >div {
+        text-align: center;
+        background-color: $history;
+        padding: 5px 0;
+        margin: 1px;
+        transition: all 0.2s ease-in-out;
+    }
+    &:hover{
+        cursor: pointer;
+        transform: translateX(-10px);
+        transition: all 0.2s ease-in-out;
+    }
+    
+}
+.historial_jugando{
+    animation: blinkingColor 1.5s infinite;
+}
+
+@keyframes blinkingColor {
+    0% {
+      background-color: unset;
+    }
+  
+    50% {
+        background-color: #831c1c;
+    }
+  
+    100% {
+        background-color: unset;
+    }
+  }
+
+.historial_row_equipo {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 3px;
+    padding-left: 3px !important
+}
+
+@media screen and (max-width:800px){
+    .historial_row:hover{
+        transform: scale(1);
+    }
+
+}

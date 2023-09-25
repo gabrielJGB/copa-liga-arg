@@ -19,6 +19,8 @@ import Equipo from './fixture/match/Equipo'
 import Cronometro from './fixture/match/Cronometro'
 
 import MatchModal from './MatchModal'
+import Historial from './Historial'
+import TeamHistorial from './TeamHistorial'
 
 export {
     Navbar,
@@ -38,5 +40,7 @@ export {
     Goles,
     Equipo,
     Cronometro,
-    MatchModal
+    MatchModal,
+    Historial,
+    TeamHistorial
 }

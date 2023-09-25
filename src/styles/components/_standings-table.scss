@@ -20,15 +20,29 @@
 }
 
 @for $i from 1 through 4 {
-    .standings-table_container tr:nth-child( #{$i}) td {
+    .standings-table_container tr:nth-child(#{$i}) td {
         background-color: #102c09 !important;
     }
 }
 
+.standings-table_row {
+
+    
+    transition: all 0.2s;
+    cursor: pointer;
+
+    &:hover {
+        transform: translateX(10px);
+    
+    }
+}
 
 @media screen and (max-width: 800px) {
     .table>:not(caption)>*>* {
         padding: 0.5rem 0.2rem;
+    }
+    .standings-table_row:hover{
+        transform: translateX(0);
     }
 
 }

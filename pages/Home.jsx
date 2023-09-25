@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from 'react'
-import { StandingsTable, Fixture, FixtureArrows, FixtureButtons, Bracket, ScorersTable, MatchModal } from '../components'
+import { StandingsTable, Fixture, FixtureArrows, FixtureButtons, Bracket, MatchModal, Historial } from '../components'
 import { DataContext } from '../context/DataContext'
 
 
@@ -47,6 +47,8 @@ const Home = () => {
               :
               <></>
             }
+
+            <Historial />
           </>
 
       }

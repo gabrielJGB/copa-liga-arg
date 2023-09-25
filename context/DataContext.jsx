@@ -9,9 +9,13 @@ export const DataContext = createContext({
   setSelected: () => { },
   obj: null,
   setObj: () => { },
-  error:null,
-  matchDisplay:null, 
-  setMatchDisplay:()=>{}
+  error: null,
+  matchDisplay: null,
+  setMatchDisplay: () => { },
+  openHistory:null, 
+  setOpenHistory:()=>{},
+  selectedTeam:null, 
+  setSelectedTeam:()=>{}
 
 })
 
@@ -23,65 +27,44 @@ export function DataProvider({ children }) {
   const [obj, setObj] = useState(false)
   const [partidosJugando, setPartidosJugando] = useState(false)
   const [matchDisplay, setMatchDisplay] = useState(false)
-
+  const [openHistory, setOpenHistory] = useState(false)
+  const [selectedTeam, setSelectedTeam] = useState(false)
+  let interval = null
+  
   // useEffect(() => {
   //   //fetchScores() descomentar
   //   setTimeout(() => {
   //     setPartidosJugando(jugando.pa)
-      
   //   }, 5000);
-
   //   // setTimeout(() => {
   //   //   setPartidosJugando(jugando2.pa)
-      
   //   // }, 10000);
-  
-
   // }, [])
 
 
 
 
 
-  // useEffect(() => {
-  //     if(tablas){
-        
-  //     }
-  // }, [tablas])
-  
-
   useEffect(() => {
-    
-      updatePartidosJugando()
-    
+
+    updatePartidosJugando()
+
   }, [partidosJugando])
 
-
   // useEffect(() => {
-  //   if(!tablas){
-  //     setCargando(true)
-  //   }else{
-  //     setCargando(false)
+
+  //   if (interval != null) {
+  //     clearInterval(interval)
   //   }
-  // }, [tablas])
-  
-let interval = null
+  //   fetchScores()
 
-  useEffect(() => {
+  //   interval = setInterval(() => {
+  //     fetchScores()
+  //   }, 30000);
 
-    if (interval != null) {
-      clearInterval(interval)
-    }
-    fetchScores()
+  //   fetchScores()
 
-    interval = setInterval(() => {
-      fetchScores()
-    }, 30000);
-
-fetchScores()
-
-  }, [])
-
+  // }, [])
 
   useEffect(() => {
 
@@ -90,15 +73,13 @@ fetchScores()
       .then(parsed => {
         setObj(parsed)
         setTablas(getTablasPuntos(parsed.fechas))
-        
-
       })
       .catch(error => {
         console.error(error)
         setError(error)
       })
       .finally(() => {
-        
+
         setCargando(false)
       })
   }, [])
@@ -112,7 +93,7 @@ fetchScores()
             prevObj.fechas.forEach(fecha => {
               fecha.partidos.forEach(partido => {
                 if (partido.id == partido_nuevo.id) {
-                  
+
 
                   partido.goles_local = partido_nuevo.r1 === "" ? "" : parseInt(partido_nuevo.r1)
                   partido.goles_visitante = partido_nuevo.r2 === "" ? "" : parseInt(partido_nuevo.r2)
@@ -130,9 +111,9 @@ fetchScores()
               })
             })
           })
- 
+
           setTablas(getTablasPuntos(prevObj.fechas))
-          
+
           return prevObj
         })
       }
@@ -190,7 +171,7 @@ fetchScores()
   }
 
   const fetchScores = () => {
-    
+
     let date = new Date().getTime()
 
     let url = "https://api.allorigins.win/raw?url=https://www.promiedos.com.ar/scores84mjd7.json?_=" + date
@@ -298,8 +279,8 @@ fetchScores()
       equipo.posicion = ++pos
     })
 
-    
-    
+
+
     return { info_tabla_1, info_tabla_2 }
   }
 
@@ -386,8 +367,12 @@ fetchScores()
     obj,
     setObj,
     error,
-    matchDisplay, 
-    setMatchDisplay
+    matchDisplay,
+    setMatchDisplay,
+    openHistory, 
+    setOpenHistory,
+    selectedTeam, 
+    setSelectedTeam
 
   }
 

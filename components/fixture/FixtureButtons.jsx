@@ -10,7 +10,7 @@ const FixtureButtons = () => {
   const variant = "success"
 
   return (
-    <div className='fixture-buttons'>
+    <div className='fixture_buttons'>
 
       {
         Array.from(Array(fechas).keys()).map((b, i) => (
