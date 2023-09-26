@@ -1,6 +1,9 @@
-import React from 'react'
+import React, { useContext } from 'react'
+import { DataContext } from '../context/DataContext'
+
 
 const TeamHistorial = (props) => {
+    const data = useContext(DataContext)
 
     const getResultColor = (match) => {
 
@@ -66,7 +69,7 @@ const TeamHistorial = (props) => {
             {
                 props.arr.map((match, i) => (
                     <div
-
+                        onClick={() => data.setMatchDisplay(match.video_id!=""?match.video_id:"")}
                         className={`historial_row ${(match.estado === "jugando" ? "historial_jugando" : "")}`} key={i}>
                         <div
 

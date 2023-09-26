@@ -29,9 +29,14 @@ const MatchModal = (props) => {
                 {/* <iframe width="560" height="315" src={"https://www.youtube.com/embed/"+data.matchDisplay.video_id} ></iframe> */}
 
         
-                <iframe width={width<800?width:800} height={height}
-                    src={`https://www.youtube.com/embed/${props.id}`}>
-                        
+                <iframe 
+                    width={width<800?width:800} 
+                    height={height}
+                    src={`https://www.youtube.com/embed/${props.id}`}
+                    frameborder="0" 
+                    allowfullscreen="allowfullscreen"
+                >
+                    
                 </iframe>
             </div>
         </div>
