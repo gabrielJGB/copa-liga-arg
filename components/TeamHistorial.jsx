@@ -65,12 +65,12 @@ const TeamHistorial = (props) => {
         <>
             {
                 props.arr.map((match, i) => (
-                    <div 
-                    
-                    className={`historial_row ${(match.estado==="jugando"?"historial_jugando":"")}`} key={i}>
-                        <div 
-                        
-                        className="historial_row_fecha-num">{i + 1}</div>
+                    <div
+
+                        className={`historial_row ${(match.estado === "jugando" ? "historial_jugando" : "")}`} key={i}>
+                        <div
+
+                            className="historial_row_fecha-num">{i + 1}</div>
                         <div className="historial_row_dia">{formatDate(match.dia)}</div>
                         <div className="historial_row_lov">
                             {
@@ -94,14 +94,14 @@ const TeamHistorial = (props) => {
 
 
                         </div>
-                        <div 
+                        <div
                             style={{ color: (getResultColor(match) === "#d7d705" ? "black" : "white"), backgroundColor: (getResultColor(match)) }}
                             className="historial_row_resultado">
-                        {match.local ===  props.selectedTeam ?
-                                                    (match.goles_local + "-" + match.goles_visitante)
-                                                    :
-                                                    (match.goles_visitante + "-" + match.goles_local)
-                                                }
+                            {match.local === props.selectedTeam.equipo ?
+                                (match.goles_local + "-" + match.goles_visitante)
+                                :
+                                (match.goles_visitante + "-" + match.goles_local)
+                            }
                         </div>
                     </div>
                 ))

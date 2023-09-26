@@ -32,6 +32,7 @@ const Match = (props) => {
                 <Autores autores={props.match.autores_local} />
                 <Autores autores={props.match.autores_visitante} />
 
+                
                 {
                     props.match.video_id != "" ?
                         <button
