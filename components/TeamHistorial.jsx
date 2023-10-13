@@ -69,7 +69,7 @@ const TeamHistorial = (props) => {
             {
                 props.arr.map((match, i) => (
                     <div
-                        onClick={() => data.setMatchDisplay(match.video_id!=""?match.video_id:"")}
+                        onClick={() => data.setMatchDisplay(match.video_id!=""?match:false)}
                         className={`historial_row ${(match.estado === "jugando" ? "historial_jugando" : "")}`} key={i}>
                         <div
 

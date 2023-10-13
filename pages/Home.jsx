@@ -19,7 +19,7 @@ const Home = () => {
     <div className="home_container">
 
       {
-        data.error || !data.tablas ?
+        data.error ?
           <h3 className='home_error'>Ha ocurrido un error :(</h3>
           :
 
@@ -43,12 +43,13 @@ const Home = () => {
 
             {
               data.matchDisplay?
-              <MatchModal id={data.matchDisplay}/>
+              <MatchModal match={data.matchDisplay}/>
               :
               <></>
             }
 
             <Historial />
+
           </>
 
       }

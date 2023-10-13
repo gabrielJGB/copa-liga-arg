@@ -15,7 +15,9 @@ export const DataContext = createContext({
   openHistory:null, 
   setOpenHistory:()=>{},
   selectedTeam:null, 
-  setSelectedTeam:()=>{}
+  setSelectedTeam:()=>{},
+  infoPartidos:null,
+  setInfoPartidos:()=>{}
 
 })
 
@@ -29,16 +31,18 @@ export function DataProvider({ children }) {
   const [matchDisplay, setMatchDisplay] = useState(false)
   const [openHistory, setOpenHistory] = useState(false)
   const [selectedTeam, setSelectedTeam] = useState(false)
+  const[infoPartidos,setInfoPartidos] = useState(false)
+
   let interval = null
   
   // useEffect(() => {
   //   //fetchScores() descomentar
   //   setTimeout(() => {
   //     setPartidosJugando(jugando.pa)
+  //   }, 500);
+  //   setTimeout(() => {
+  //     setPartidosJugando(jugando2.pa)
   //   }, 5000);
-  //   // setTimeout(() => {
-  //   //   setPartidosJugando(jugando2.pa)
-  //   // }, 10000);
   // }, [])
 
 
@@ -51,20 +55,20 @@ export function DataProvider({ children }) {
 
   }, [partidosJugando])
 
-  useEffect(() => {
+  // useEffect(() => {
 
-    if (interval != null) {
-      clearInterval(interval)
-    }
-    fetchScores()
+  //   if (interval != null) {
+  //     clearInterval(interval)
+  //   }
+  //   fetchScores()
 
-    interval = setInterval(() => {
-      fetchScores()
-    }, 30000);
+  //   interval = setInterval(() => {
+  //     fetchScores()
+  //   }, 30000);
 
-    fetchScores()
+  //   fetchScores()
 
-  }, [])
+  // }, [])
 
   useEffect(() => {
 
@@ -73,15 +77,25 @@ export function DataProvider({ children }) {
       .then(parsed => {
         setObj(parsed)
         setTablas(getTablasPuntos(parsed.fechas))
+        fetchScores()
       })
+      
       .catch(error => {
         console.error(error)
         setError(error)
       })
-      .finally(() => {
 
-        setCargando(false)
+
+      fetch("https://gabrieljgb.github.io/pr-task/fichas.json")
+      .then(resp => resp.json())
+      .then(parsed =>  setInfoPartidos(parsed) )
+      .catch(error => {
+        console.error(error)
+        setError(error)
       })
+
+      
+   
   }, [])
 
   const updatePartidosJugando = () => {
@@ -173,9 +187,10 @@ export function DataProvider({ children }) {
   const fetchScores = () => {
 
     let date = new Date().getTime()
+    
 
-    // let url = "https://api.allorigins.win/raw?url=https://www.promiedos.com.ar/scores84mjd7.json?_=" + date
-    let url = "https://cors-proxy-alt.onrender.com/https://www.promiedos.com.ar/scores84mjd7.json"
+    let url = "https://api.allorigins.win/raw?url=https://www.promiedos.com.ar/scores84mjd7.json?_=" + date
+    // let url = "https://cors-proxy-alt.onrender.com/https://www.promiedos.com.ar/scores84mjd7.json_=" +date
     let req_info = { headers: { 'X-Requested-With': 'XMLHttpRequest' } }
 
 
@@ -372,7 +387,9 @@ export function DataProvider({ children }) {
     openHistory, 
     setOpenHistory,
     selectedTeam, 
-    setSelectedTeam
+    setSelectedTeam,
+    infoPartidos,setInfoPartidos
+    
 
   }
 

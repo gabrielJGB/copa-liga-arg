@@ -18,6 +18,16 @@
     height: 40px !important;
 }
 
+.fixture_arrows{
+    display:flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap:60px;
+    margin:30px 0;
+    width:100%;
+}
+
 .fixture_zone{
     text-align: center;
     color: #161616;
@@ -111,11 +121,9 @@
     grid-template-rows: 1fr ;
     background-color: transparent;
     padding: 0 !important;
-       
-    
     max-height: 0;
     overflow: hidden;
-    transition: max-height 0.4s ease-in-out;
+    transition: all 0.7s cubic-bezier(0.85,-0.01, 0.24, 1);
 
     >div{
         margin: 1px;

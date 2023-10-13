@@ -1,13 +1,10 @@
 import React, { useContext, useEffect, useState } from 'react'
-import DateRow from './DateRow'
-import ZoneRow from './ZoneRow'
-import MatchRow from './MatchRow'
-import Table from 'react-bootstrap/Table'
+
 
 import {Date,Zone,Match} from '../index'
 
 import { DataContext } from '../../context/DataContext'
-import '../../src/styless/FixtureTable.css'
+
 
 const FixtureTable = (props) => {
     const data = useContext(DataContext)

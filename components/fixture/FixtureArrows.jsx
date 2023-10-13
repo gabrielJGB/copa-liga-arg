@@ -1,6 +1,6 @@
 import React, { useContext } from 'react'
 import Button from 'react-bootstrap/Button'
-import '../../src/styless/FixtureArrows.css'
+
 import { DataContext } from '../../context/DataContext'
 
 const FixtureArrows = () => {
@@ -8,7 +8,7 @@ const FixtureArrows = () => {
     const variant = "success"
 
     return (
-        <div className='fixture-arrows'>
+        <div className='fixture_arrows'>
             <Button
                 variant={variant}
                 size='lg'

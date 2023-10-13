@@ -69,6 +69,8 @@ $close_button_color: rgb(255, 255, 255);
     display: flex;
     flex-direction: column;
     font-size: 12px;
+    height: 90vh;
+    overflow-y: scroll;
 }
 
 .historial_row {

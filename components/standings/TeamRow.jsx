@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, useState } from 'react'
 import { DataContext } from '../../context/DataContext'
-import '../../src/styless/TeamRow.css'
+
 
 const TeamRow = (props) => {
     const data = useContext(DataContext)
@@ -40,15 +40,16 @@ const TeamRow = (props) => {
     return (
         <tr 
             onClick={()=>{
-                ;
+                
                 data.setSelectedTeam(props.equipo)
                 data.setOpenHistory(true)
+                
             }}
-            className="standings-table_row" 
-            // style={{transform: `translateX(${data.selectedTeam.equipo===props.equipo.equipo?"10px":"0"})`}}
 
-            >
+            
+            className="standings-table_row">
 
+                
             <td>{props.equipo.posicion}</td>
 
             <td style={{ textAlign: "left", display: "flex", alignItems: "center" }}>

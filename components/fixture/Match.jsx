@@ -29,7 +29,7 @@ const Match = (props) => {
             </div>
 
 
-            <div style={{ maxHeight: (matchInfoVisible ? "100px" : null) }} className="fixture_match-info">
+            <div style={{ maxHeight: (matchInfoVisible ? "200px" : null) }} className="fixture_match-info">
 
                 {
                     props.match.estado === "finalizado" && !props.match.goles_local && !props.match.goles_visitante ?
@@ -46,7 +46,7 @@ const Match = (props) => {
                 {
                     props.match.video_id != "" ?
                         <button
-                            onClick={() => data.setMatchDisplay(props.match.video_id)}
+                            onClick={() => data.setMatchDisplay(props.match.video_id!=""?props.match:false)}
                             className='fixture_button-resumen'>Ver resumen</button>
                         :
                         <></>

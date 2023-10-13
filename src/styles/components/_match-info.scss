@@ -1,0 +1,149 @@
+$background: black;
+$color: white;
+
+
+
+
+.match-info_container {
+    position: relative;
+    background-color: #21273b;
+    width: 100%;
+    height: 90vh;
+    box-shadow: 0 0 10px black;
+    overflow-y: auto;
+
+}
+
+.match-info_header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-top: 2px;
+    background-color: $background;
+    color: $color;
+    height: 8vh;
+    position: sticky;
+    top: 0;
+
+    >.score,
+    .team {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+    }
+
+    >.team {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 40%
+    }
+
+    >.score {
+        width: 10%;
+        font-size: 32px;
+    }
+
+
+}
+
+
+.match-info_body {
+    background-color: #21273b;
+
+}
+
+
+.match-info_estadisticas {
+    padding:5px;
+
+    .estadistica{
+        margin-bottom: 10px;
+    }
+
+    .titulo_estadistica{
+        width: 100%;
+        text-align: center;
+    }
+
+
+    .barra_body {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        background-color: #111d3d;
+        width: 100%;
+        height: 25px;
+        text-align: center;
+
+        &>div {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+        }
+
+        .barra_visitante {
+
+            width: 50%;
+            background-color: #111d3d;
+        }
+
+        .barra_local {
+            
+            width: 50%;
+            background-color: #20702b;
+
+        }
+       
+    }
+
+}
+
+.match-info_incidencias{
+    padding:5px;
+
+    .incidencia{
+        display:grid;
+        grid-template-columns: 1fr 0.1fr 1fr;
+        font-size: 13px;
+        padding:5px 0;
+        background-color: #1a1e2e;
+        align-items: center;
+        margin-bottom: 5px;
+
+        .local{
+            padding-right: 10px;
+            grid-area: 1/1/2/2;
+        }
+        .minuto{
+            display: inline;
+            text-align: center;
+            font-size: 17px;
+            grid-area: 1/2/2/3;
+        }
+        .visitante{
+            padding-left: 10px;
+            grid-area: 1/3/2/4;
+        }
+        .inc{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .jugador{
+            display: flex;
+            flex-direction: column;
+            
+        }
+    }
+}
+
+
+@media screen and (max-width:800px) {
+    .match-info_container {
+        border-radius: 0;
+    }
+}

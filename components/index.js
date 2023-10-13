@@ -1,7 +1,7 @@
 import Navbar from './Navbar'
 import StandingsTable from './standings/StandingsTable'
 import TeamRow from './standings/TeamRow'
-import DateRow from './fixture/DateRow'
+
 import Fixture from './fixture/Fixture'
 import FixtureButtons from './fixture/FixtureButtons'
 import FixtureArrows from './fixture/FixtureArrows'
@@ -18,15 +18,17 @@ import Goles from './fixture/match/Goles'
 import Equipo from './fixture/match/Equipo'
 import Cronometro from './fixture/match/Cronometro'
 
-import MatchModal from './MatchModal'
 import Historial from './Historial'
 import TeamHistorial from './TeamHistorial'
+
+import MatchModal from './MatchModal'
+import MatchVideo from './MatchVideo'
+import MatchInfo from './MatchInfo'
 
 export {
     Navbar,
     StandingsTable,
     TeamRow,
-    DateRow,
     Fixture,
     FixtureButtons,
     FixtureArrows,
@@ -42,5 +44,7 @@ export {
     Cronometro,
     MatchModal,
     Historial,
-    TeamHistorial
+    TeamHistorial,
+    MatchInfo,
+    MatchVideo
 }

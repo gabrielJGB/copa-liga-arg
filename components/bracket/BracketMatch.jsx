@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import '../../src/styless/BracketMatch.css'
+
 
 const BracketMatch = (props) => {
     const img_size = 15
@@ -18,21 +18,21 @@ const BracketMatch = (props) => {
 
     
     return (
-        <div className={"match "+"match"+props.matchId} >
-            <div className="team">
-                <div className="team-box">
-                <img className="img" src={"https://www.promiedos.com.ar/"+props.local.escudo} width={img_size} height={img_size}/>
-                    <div className="name local-name">{props.local.equipo}</div>
+        <div className={"bracket_match "+"bracket_match"+props.matchId} >
+            <div className="bracket_team">
+                <div className="bracket_team-box">
+                <img className="bracket_img" src={"https://www.promiedos.com.ar/"+props.local.escudo} width={img_size} height={img_size}/>
+                    <div className="bracket_name bracket_local-name">{props.local.equipo}</div>
                 </div>
-                <div className="result result-local">-</div>
+                <div className="bracket_result bracket_result-local">-</div>
             </div>
 
-            <div className="team">
-                <div className="team-box">
-                <img className="img" src={"https://www.promiedos.com.ar/"+props.visitante.escudo} width={img_size} height={img_size}/>
-                    <div className="name away-name">{props.visitante.equipo}</div>
+            <div className="bracket_team">
+                <div className="bracket_team-box">
+                <img className="bracket_img" src={"https://www.promiedos.com.ar/"+props.visitante.escudo} width={img_size} height={img_size}/>
+                    <div className="bracket_name bracket_away-name">{props.visitante.equipo}</div>
                 </div>
-                <div className="result result-visitante">-</div>
+                <div className="bracket_result bracket_result-visitante">-</div>
             </div>
         </div>
     )

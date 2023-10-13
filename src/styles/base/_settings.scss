@@ -8,3 +8,14 @@ $secondary: orange;
 //     align-items: center;
 // }
 
+
+
+::-webkit-scrollbar {
+    width: 5px;
+}
+::-webkit-scrollbar-thumb {
+    background-color: rgb(120, 120, 120);
+}
+::-webkit-scrollbar-track {
+    background: rgb(52, 52, 52);
+}

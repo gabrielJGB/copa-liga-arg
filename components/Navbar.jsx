@@ -3,14 +3,14 @@ import Navbar from 'react-bootstrap/Navbar'
 import Container from 'react-bootstrap/Container'
 import { Link } from 'react-router-dom'
 
-import '../src/styless/Navbar.css'
-import c from '../src/styless/colors'
+
+
 
 const NavBar = () => {
   return (
-    <Navbar bg="dark">
+    <Navbar className="navbar" bg="dark">
       <Container >
-        <Navbar.Brand style={{ color: c.light_1 }} className="container-navbar" >
+        <Navbar.Brand className="container-navbar" >
           <img
             alt=""
             src="/pwa-192x192.png"
@@ -18,7 +18,7 @@ const NavBar = () => {
             height="30"
             className="d-inline-block align-top"
           />{' '}
-          <Link to="/" style={{color: c.light_1 }} className="navbar-link">Copa de la Liga 2023</Link>
+          <Link to="/" className="navbar-link">Copa de la Liga 2023</Link>
         </Navbar.Brand>
 
       </Container>

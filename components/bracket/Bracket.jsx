@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from 'react'
-import '../../src/styless/Bracket.css'
+
 import BracketMatch from './BracketMatch'
 import { DataContext } from '../../context/DataContext'
 
@@ -30,8 +30,8 @@ const Bracket = (props) => {
 
   return (
     <div className='bracket'>
-      <h4>LLaves (al momento)</h4>
-      <div className="bracket-grid">
+      <h4>Llaves (al momento)</h4>
+      <div className="bracket_grid">
 
 
 
@@ -43,12 +43,12 @@ const Bracket = (props) => {
         <BracketMatch matchId={6} local={{}} visitante={{}}/>
         <BracketMatch matchId={7} local={{}} visitante={{}}/>  
 
-        <div className="border1 border_"></div>
-        <div className="border2 border_"></div>
-        <div className="border3 border_"></div>
-        <div className="border-top-1 border_top"></div>
-        <div className="border-top-2 border_top"></div>
-        <div className="border-top-3 border_top"></div>
+        <div className="bracket_border1 bracket_border_"></div>
+        <div className="bracket_border2 bracket_border_"></div>
+        <div className="bracket_border3 bracket_border_"></div>
+        <div className="bracket_border-top-1 bracket_border_top"></div>
+        <div className="bracket_border-top-2 bracket_border_top"></div>
+        <div className="bracket_border-top-3 bracket_border_top"></div>
 
       </div>
     </div>

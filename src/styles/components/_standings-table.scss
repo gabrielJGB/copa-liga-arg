@@ -43,11 +43,13 @@
         margin:1px;
         padding: 0.6rem 0.2rem;
     }
-    .standings-table_row:hover{
+    
+    .standings-table_row{
         transform: translateX(0);
-    }
-    .standings-table_row {
-        
+        &:hover{
+            transform: translateX(0);
+        }
     }
 
 }
+
