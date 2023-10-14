@@ -55,20 +55,20 @@ export function DataProvider({ children }) {
 
   }, [partidosJugando])
 
-  // useEffect(() => {
+  useEffect(() => {
 
-  //   if (interval != null) {
-  //     clearInterval(interval)
-  //   }
-  //   fetchScores()
+    if (interval != null) {
+      clearInterval(interval)
+    }
+    fetchScores()
 
-  //   interval = setInterval(() => {
-  //     fetchScores()
-  //   }, 30000);
+    interval = setInterval(() => {
+      fetchScores()
+    }, 30000);
 
-  //   fetchScores()
+    fetchScores()
 
-  // }, [])
+  }, [])
 
   useEffect(() => {
 

@@ -6,6 +6,18 @@ import { DataContext } from '../context/DataContext'
 const Home = () => {
   const data = useContext(DataContext)
 
+  useEffect(() => {
+    let body = document.querySelector("body")
+    if(data.matchDisplay){
+        body.style.overflow = "hidden"
+    }else{
+        body.style.overflow = ""
+    }
+
+
+  }, [data.matchDisplay])
+  
+
 
   if (data.cargando) {
     return (

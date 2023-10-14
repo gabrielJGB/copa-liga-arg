@@ -1,7 +1,20 @@
 $background: black;
 $color: white;
 
+h4 {
+    width: 100%;
+    padding: 10px 0;
+    font-size: 20px;
+    color: #070707;
+    background-color: #e4e4e4;
+    text-align: center;
+    transition: all 0.3s;
+    cursor: pointer;
+}
 
+h5 {
+    text-align: center;
+}
 
 
 .match-info_container {
@@ -20,6 +33,7 @@ $color: white;
     justify-content: space-between;
     padding-top: 2px;
     background-color: $background;
+    box-shadow: 0 0 10px black;
     color: $color;
     height: 8vh;
     position: sticky;
@@ -50,20 +64,26 @@ $color: white;
 }
 
 
-.match-info_body {
-    background-color: #21273b;
+
+
+.match-info_seccion {
+
+    display: block;
+
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
 
 }
 
 
 .match-info_estadisticas {
-    padding:5px;
+    padding: 5px;
 
-    .estadistica{
+    .estadistica {
         margin-bottom: 10px;
     }
 
-    .titulo_estadistica{
+    .titulo_estadistica {
         width: 100%;
         text-align: center;
     }
@@ -73,7 +93,7 @@ $color: white;
         display: flex;
         flex-direction: row;
         align-items: center;
-        background-color: #111d3d;
+        background-color: #7e2525;
         width: 100%;
         height: 25px;
         text-align: center;
@@ -88,57 +108,144 @@ $color: white;
         .barra_visitante {
 
             width: 50%;
-            background-color: #111d3d;
+            background-color: #7e2525;
         }
 
         .barra_local {
-            
+
             width: 50%;
             background-color: #20702b;
 
         }
-       
+
     }
 
 }
 
-.match-info_incidencias{
-    padding:5px;
+.match-info_incidencias {
+    padding: 5px;
 
-    .incidencia{
-        display:grid;
+    .incidencia {
+        display: grid;
         grid-template-columns: 1fr 0.1fr 1fr;
         font-size: 13px;
-        padding:5px 0;
-        background-color: #1a1e2e;
+        // padding:5px 0;
+        // background-color: #1a1e2e;
         align-items: center;
         margin-bottom: 5px;
 
-        .local{
+        .local {
             padding-right: 10px;
             grid-area: 1/1/2/2;
         }
-        .minuto{
-            display: inline;
-            text-align: center;
-            font-size: 17px;
+
+        .minuto {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 0 7px;
+            height: 100%;
+            background-color: #1a1e2e;
+            font-size: 19px;
             grid-area: 1/2/2/3;
         }
-        .visitante{
+
+        .visitante {
             padding-left: 10px;
             grid-area: 1/3/2/4;
         }
-        .inc{
+
+        .inc {
             display: flex;
             justify-content: space-between;
             align-items: center;
+            height: 100%;
         }
-        .jugador{
+
+        .jugador {
             display: flex;
             flex-direction: column;
-            
+            justify-content: center;
+            align-items: center;
+
         }
     }
+}
+
+
+.match-info_formaciones {
+    padding: 5px;
+
+    .contenedor {
+        display: flex;
+        flex-direction: row;
+        gap: 5px;
+        width: 100%;
+        font-size: 13px;
+        color: #eeeeee;
+
+
+
+        .jugador {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+            background-color: #1a1e2e;
+            padding: 7px 5px;
+            margin-bottom: 3px;
+            border-radius: 5px;
+            border-style: solid;
+            border-width: 0 0 0 4px;
+
+            // cursor:pointer;
+            // &:hover{
+            //     background-color: #161925;
+            // }
+            .jugador-left {
+                display: flex;
+                flex-direction: row;
+                gap: 4px;
+            }
+
+            .icons {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                gap: 3px
+            }
+
+            .numero {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                border: solid 1px #e2e2e27a;
+                color: white;
+                border-radius: 6px;
+                
+                min-width: 22px;
+            }
+
+            .capitan {
+                background-color: #1f5dd1;
+                color: white;
+                border: 0 !important
+            }
+
+            .nombre {
+                display: flex;
+                flex-direction: row;
+                gap:3px;
+                align-items: center;
+            }
+        }
+
+        &>div {
+            width: 50%;
+        }
+    }
+
+
 }
 
 
@@ -146,4 +253,7 @@ $color: white;
     .match-info_container {
         border-radius: 0;
     }
+
+
+
 }
