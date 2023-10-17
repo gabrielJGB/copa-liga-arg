@@ -28,33 +28,40 @@ const MatchInfo = (props) => {
 
 
     useEffect(() => {
+
+        let player_obj = false
+
         if (selectedPlayer) {
-            let player_obj = data.planteles.find(equipo => equipo.equipo === selectedPlayer.equipo)?.jugadores.find(jugador => jugador.numero === selectedPlayer.numero)
-            player_obj.altura = selectedPlayer.altura
-            player_obj.esCapitan = selectedPlayer.esCapitan
-            player_obj.rojas = selectedPlayer.rojas
-            player_obj.amarillas = selectedPlayer.amarillas
-            player_obj.goles = selectedPlayer.goles
-            player_obj.lesion = selectedPlayer.lesion
-            player_obj.cambio_in = selectedPlayer.cambio_in
-            player_obj.cambio_out = selectedPlayer.cambio_out
+            player_obj = data.planteles.find(equipo => equipo.equipo === selectedPlayer.equipo)?.jugadores.find(jugador => jugador.numero === selectedPlayer.numero)
 
-            setPlayerObj(player_obj)
+            if (player_obj) {
+                player_obj.altura = selectedPlayer.altura
+                player_obj.esCapitan = selectedPlayer.esCapitan
+                player_obj.rojas = selectedPlayer.rojas
+                player_obj.amarillas = selectedPlayer.amarillas
+                player_obj.goles = selectedPlayer.goles
+                player_obj.lesion = selectedPlayer.lesion
+                player_obj.cambio_in = selectedPlayer.cambio_in
+                player_obj.cambio_out = selectedPlayer.cambio_out
 
+                setPlayerObj(player_obj)
+            }else{
+                setPlayerShow(false)
+            }
 
         }
     }, [selectedPlayer])
 
 
     useEffect(() => {
-      
-        if(!playerShow){
+
+        if (!playerShow) {
             setSelectedPlayer(false)
             setPlayerObj(false)
         }
 
     }, [playerShow])
-    
+
 
 
 
@@ -419,30 +426,30 @@ const MatchInfo = (props) => {
             >
                 {
                     playerObj ?
-                <>
-                    <img className='img' src={playerObj.foto_medium} alt={playerObj.nombre} />
-                    <div>
-                        <h3>{playerObj.nombre}</h3>
-                        <div> {playerObj.pos_detalle} </div>
-                        <div>{playerObj.edad + " años"}</div>
-                        {
-                            playerObj.altura!="-"?
-                            <div>{playerObj.altura + " cm"}</div>
-                            :
-                            <></>
-                        }
-                        <div>{playerObj.valor}</div>
-                        <div>
-                            {playerObj.nacionalidad.map((n, i) => (
-                                <img style={{paddingRight:4}} key={i} src={n.bandera} alt={n.pais} />
-                            ))}
-                        </div>
-                    </div>
-                </>
-                :
-                <></>
+                        <>
+                            <img className='img' src={playerObj.foto_medium} alt={playerObj.nombre} />
+                            <div>
+                                <h3>{playerObj.nombre}</h3>
+                                <div> {playerObj.pos_detalle} </div>
+                                <div>{playerObj.edad + " años"}</div>
+                                {
+                                    playerObj.altura != "-" ?
+                                        <div>{playerObj.altura + " cm"}</div>
+                                        :
+                                        <></>
+                                }
+                                <div>{playerObj.valor}</div>
+                                <div>
+                                    {playerObj.nacionalidad.map((n, i) => (
+                                        <img style={{ paddingRight: 4 }} key={i} src={n.bandera} alt={n.pais} />
+                                    ))}
+                                </div>
+                            </div>
+                        </>
+                        :
+                        <></>
                 }
-                    <div></div>
+                <div></div>
             </div>
         </div>
     )
