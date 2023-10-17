@@ -43,6 +43,7 @@ const MatchInfo = (props) => {
                 player_obj.lesion = selectedPlayer.lesion
                 player_obj.cambio_in = selectedPlayer.cambio_in
                 player_obj.cambio_out = selectedPlayer.cambio_out
+                
 
                 setPlayerObj(player_obj)
             }else{
@@ -431,7 +432,7 @@ const MatchInfo = (props) => {
                             <div>
                                 <h3>{playerObj.nombre}</h3>
                                 <div> {playerObj.pos_detalle} </div>
-                                <div>{playerObj.edad + " años"}</div>
+                                <div>{ playerObj.edad + " años " +"("+ playerObj.fecha_nac+")"  }</div>
                                 {
                                     playerObj.altura != "-" ?
                                         <div>{playerObj.altura + " cm"}</div>
