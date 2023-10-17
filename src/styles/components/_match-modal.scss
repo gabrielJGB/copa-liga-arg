@@ -78,13 +78,14 @@
         border-radius: 0;
         margin: 0;
         width: 100%;
-        background-color: white;
-        color: black;
+        background-color: black;
+        color: white;
+        border: unset;
     }
 
     .match-modal_close-button:hover{
-        background-color: white;
-        color: black;
+        background-color: black;
+        color: white;
     }
 
     .match-modal_video iframe{

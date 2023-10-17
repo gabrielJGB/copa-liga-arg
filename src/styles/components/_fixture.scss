@@ -1,163 +1,169 @@
-.fixture_container{
-    
-    
-}
+.fixture_container {}
 
-.fixture_buttons{
+.fixture_buttons {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    gap:13px
+    gap: 13px
 }
 
-.fixture_buttons > .btn{
+.fixture_buttons>.btn {
 
     width: 40px !important;
     height: 40px !important;
 }
 
-.fixture_arrows{
-    display:flex;
+.fixture_arrows {
+    display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    gap:60px;
-    margin:30px 0;
-    width:100%;
+    gap: 60px;
+    margin: 30px 0;
+    width: 100%;
 }
 
-.fixture_zone{
+.fixture_zone {
     text-align: center;
-    color: #161616;
-    background-color: #e0e0e0;
+    color: #e3e3e3;
+    background-color: #198754;
     font-size: 14px;
-    padding:5px;
+    padding: 5px;
+    font-weight: bold;
 }
 
-.fixture_date{
+.fixture_date {
     text-align: center;
     background-color: #161616;
     font-size: 14px;
-    padding:5px;
+    padding: 5px;
 }
 
-.fixture_match{
+.fixture_match {
     display: grid;
     grid-template-columns: 0.4fr 1fr 0.2fr 0.2fr 1fr 0.4fr;
-    >div{
+
+    >div {
         display: flex;
         justify-content: center;
         align-items: center;
-        gap:3px;
+        gap: 3px;
         padding: 3px;
         background-color: #212229;
-        margin:1px;
+        margin: 1px;
         font-size: 13px;
     }
 
-  
+
 }
-.fixture_cronometro-jugando{
+
+.fixture_cronometro-jugando {
     transition: all 0.5s;
-    background-color:#831c1c !important;
+    background-color: #831c1c !important;
     animation: blinkingColor 1.5s infinite;
 }
 
 @keyframes blinkingColor {
-  0% {
-    color: #ffffff;
-  }
+    0% {
+        color: #ffffff;
+    }
 
-  50% {
-    color: #c7a2a2;
-  }
+    50% {
+        color: #c7a2a2;
+    }
 
-  100% {
-    color: #ffffff;
-  }
+    100% {
+        color: #ffffff;
+    }
 }
 
-.fixture_cronometro-finalizado{
+.fixture_cronometro-finalizado {
     transition: all 0.5s;
-    background-color:#131d28!important
+    background-color: #131d28 !important
 }
 
 
-.fixture_equipo-info{
+.fixture_equipo-info {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    gap:5px;
     justify-content: center;
     align-items: center;
-    
+    padding: 6px 0;
+
 }
 
-.fixture_match-goles{
+.fixture_match-goles {
     font-size: 15px !important;
 }
 
 
-.fixture_match-button{
-    $disabled_color:#4e5766;
-    border:0;
-    color:#e6e6e6;
+.fixture_match-button {
+    $disabled_color: #56595e;
+    border: 0;
+    color: #e6e6e6;
     background-color: #2d4063;
     margin: 1px;
     font-size: 16px;
-    &:hover{
+
+    &:hover {
         background-color: #233f74;
     }
-    &:disabled{
-        color:$disabled_color;
+
+    &:disabled {
+        color: $disabled_color;
         background-color: $disabled_color;
     }
 }
 
-.fixture_match-info{
-    
+.fixture_match-info {
+
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr ;
+    grid-template-rows: 1fr;
     background-color: transparent;
     padding: 0 !important;
     max-height: 0;
     overflow: hidden;
-    transition: all 0.7s cubic-bezier(0.85,-0.01, 0.24, 1);
+    transition: all 0.7s cubic-bezier(0.85, -0.01, 0.24, 1);
 
-    >div{
+    >div {
         margin: 1px;
         background-color: #222222;
         font-size: 13px;
     }
-    >button{
-        margin:1px;
+
+    >button {
+        margin: 1px;
         outline: none;
     }
 }
 
-.fixture_autores-container{
+.fixture_autores-container {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding:2px
+    padding: 2px
 }
 
-.fixture_autor{
+.fixture_autor {
     display: flex;
     flex-direction: row;
     align-items: center;
-    gap:4px
+    gap: 4px
 }
 
-.fixture_button-resumen{
-    border:0;
-    padding:5px 0;
+.fixture_button-resumen {
+    border: 0;
+    padding: 5px 0;
     grid-area: 2/1/3/3;
-    background-color: #317a2f;
+    background-color: #871c26;
     color: white;
-    &:hover{
-        background-color: #338a30;
+
+    &:hover {
+        background-color: #741921;
     }
 }
 
@@ -166,11 +172,22 @@
     width: 5px;
     height: 8px;
     background-color: #b50000;
-    
-  }
 
-  @media screen and (max-width:800px) {
-        .fixture_container * {
-            font-size: 12px !important;
-        }
-  }
+}
+
+@media screen and (max-width:800px) {
+    .fixture_container * {
+        font-size: 12px !important;
+    }
+
+
+    .fixture_equipo-info {
+        flex-direction: column;
+        gap: 0;
+        padding: 0;
+    }
+    .fixture_button-resumen{
+        padding: 10px 0;
+    }
+
+}
