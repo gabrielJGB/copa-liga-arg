@@ -25,7 +25,7 @@ const MatchVideo = (props) => {
         height={height}
         src={`https://www.youtube.com/embed/${props.video_id}`}
         
-        // allowFullscreen="allowfullscreen"
+        allowFullscreen="allowfullscreen"
       >
 
       </iframe>

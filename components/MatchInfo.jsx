@@ -13,6 +13,9 @@ const MatchInfo = (props) => {
     const [displaySeccion1, setDisplaySeccion1] = useState("block")
     const [displaySeccion2, setDisplaySeccion2] = useState("block")
     const [displaySeccion3, setDisplaySeccion3] = useState("block")
+    const [playerShow, setPlayerShow] = useState(false)
+    const [selectedPlayer, setSelectedPlayer] = useState(false)
+    const [playerObj, setPlayerObj] = useState(false)
 
 
     useEffect(() => {
@@ -20,11 +23,38 @@ const MatchInfo = (props) => {
             "local": partido.local.colores,
             "visitante": partido.visitante.colores,
         })
-        console.log(partido)
+        // console.log(partido)
     }, [])
 
 
+    useEffect(() => {
+        if (selectedPlayer) {
+            let player_obj = data.planteles.find(equipo => equipo.equipo === selectedPlayer.equipo)?.jugadores.find(jugador => jugador.numero === selectedPlayer.numero)
+            player_obj.altura = selectedPlayer.altura
+            player_obj.esCapitan = selectedPlayer.esCapitan
+            player_obj.rojas = selectedPlayer.rojas
+            player_obj.amarillas = selectedPlayer.amarillas
+            player_obj.goles = selectedPlayer.goles
+            player_obj.lesion = selectedPlayer.lesion
+            player_obj.cambio_in = selectedPlayer.cambio_in
+            player_obj.cambio_out = selectedPlayer.cambio_out
 
+            setPlayerObj(player_obj)
+
+
+        }
+    }, [selectedPlayer])
+
+
+    useEffect(() => {
+      
+        if(!playerShow){
+            setSelectedPlayer(false)
+            setPlayerObj(false)
+        }
+
+    }, [playerShow])
+    
 
 
 
@@ -88,7 +118,13 @@ const MatchInfo = (props) => {
 
 
         return (
-            <div key={i} className="jugador" style={{ borderColor: bcolor }}>
+            <div
+                onClick={() => {
+                    setPlayerShow(prev => prev ? true : "-")
+                    setSelectedPlayer(jugador)
+                }}
+                key={i} className="jugador"
+                style={{ borderColor: bcolor }}>
 
                 <div className='jugador-left'>
                     <div
@@ -103,10 +139,10 @@ const MatchInfo = (props) => {
                     <div className="nombre">
                         <span >{jugador.nombre}</span>
                         {
-                            jugador.cambio_in ? icono_flecha_in(7,10) : <></>
+                            jugador.cambio_in ? icono_flecha_in(7, 10) : <></>
                         }
                         {
-                            jugador.cambio_out ? icono_flecha_out(7,10) : <></>
+                            jugador.cambio_out ? icono_flecha_out(7, 10) : <></>
                         }
                     </div>
                 </div>
@@ -115,21 +151,21 @@ const MatchInfo = (props) => {
                 <div className="icons">
 
                     {
-                        jugador.lesion ? icono_lesion(12,12) : <></>
+                        jugador.lesion ? icono_lesion(12, 12) : <></>
                     }
                     {
                         Array(jugador.amarillas).fill("").map((r, i) => (
-                            icono_amarilla(8,13)
+                            icono_amarilla(8, 13)
                         ))
                     }
                     {
                         Array(jugador.rojas).fill("").map((r, i) => (
-                            icono_roja(8,13)
+                            icono_roja(8, 13)
                         ))
                     }
                     {
                         Array(jugador.goles).fill("").map((r, i) => (
-                            icono_gol(17,17)
+                            icono_gol(17, 17)
                         ))
                     }
 
@@ -156,19 +192,16 @@ const MatchInfo = (props) => {
 
     }
 
-
-
-
     const get_icon_incidencia = (tipo) => {
-        
+
         if (tipo === "amarilla") {
             return (
-                icono_amarilla(9,13)
+                icono_amarilla(9, 13)
             )
 
         } else if (tipo === "roja") {
             return (
-                icono_roja(9,13)
+                icono_roja(9, 13)
             )
 
         } else if (tipo === "cambio") {
@@ -221,6 +254,8 @@ const MatchInfo = (props) => {
                 </div>
 
             </div>
+
+
 
             <div className='match-info_body'>
 
@@ -374,8 +409,41 @@ const MatchInfo = (props) => {
                     </div>
                 </div>
 
+
             </div>
 
+            <div
+                onClick={() => { setPlayerShow(prev => prev ? false : true) }}
+                style={{ height: (playerShow ? "40%" : "0") }}
+                className="match-info_player"
+            >
+                {
+                    playerObj ?
+                <>
+                    <img className='img' src={playerObj.foto_medium} alt={playerObj.nombre} />
+                    <div>
+                        <h3>{playerObj.nombre}</h3>
+                        <div> {playerObj.pos_detalle} </div>
+                        <div>{playerObj.edad + " años"}</div>
+                        {
+                            playerObj.altura!="-"?
+                            <div>{playerObj.altura + " cm"}</div>
+                            :
+                            <></>
+                        }
+                        <div>{playerObj.valor}</div>
+                        <div>
+                            {playerObj.nacionalidad.map((n, i) => (
+                                <img style={{paddingRight:4}} key={i} src={n.bandera} alt={n.pais} />
+                            ))}
+                        </div>
+                    </div>
+                </>
+                :
+                <></>
+                }
+                    <div></div>
+            </div>
         </div>
     )
 }

@@ -17,7 +17,9 @@ export const DataContext = createContext({
   selectedTeam:null, 
   setSelectedTeam:()=>{},
   infoPartidos:null,
-  setInfoPartidos:()=>{}
+  setInfoPartidos:()=>{},
+  planteles:null,
+   setPlanteles:()=>{}
 
 })
 
@@ -32,6 +34,7 @@ export function DataProvider({ children }) {
   const [openHistory, setOpenHistory] = useState(false)
   const [selectedTeam, setSelectedTeam] = useState(false)
   const[infoPartidos,setInfoPartidos] = useState(false)
+  const [planteles, setPlanteles] = useState(false)
 
   let interval = null
   
@@ -89,6 +92,14 @@ export function DataProvider({ children }) {
       fetch("https://gabrieljgb.github.io/pr-task/fichas.json")
       .then(resp => resp.json())
       .then(parsed =>  setInfoPartidos(parsed) )
+      .catch(error => {
+        console.error(error)
+        setError(error)
+      })
+
+      fetch("https://gabrieljgb.github.io/pr-task/planteles.json")
+      .then(resp => resp.json())
+      .then(parsed =>  setPlanteles(parsed) )
       .catch(error => {
         console.error(error)
         setError(error)
@@ -204,7 +215,7 @@ export function DataProvider({ children }) {
       })
       .catch(error => {
         console.log(error)
-        setError(error)
+        // setError(error)
       })
       .finally(() => {
         setCargando(false)
@@ -388,7 +399,10 @@ export function DataProvider({ children }) {
     setOpenHistory,
     selectedTeam, 
     setSelectedTeam,
-    infoPartidos,setInfoPartidos
+    infoPartidos,
+    setInfoPartidos,
+    planteles, 
+    setPlanteles
     
 
   }

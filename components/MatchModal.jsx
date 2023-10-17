@@ -22,6 +22,7 @@ const MatchModal = (props) => {
             <MatchVideo video_id={props.match.video_id}/>
             <MatchInfo id={props.match.id}/>
             
+            
         </div>
     )
 }
