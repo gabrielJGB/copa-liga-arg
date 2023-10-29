@@ -10,7 +10,10 @@ const Match = (props) => {
 
     return (
         <div className="fixture_match-container">
-            <div className="fixture_match">
+            <div 
+                className="fixture_match"  
+                
+            >
                 <Cronometro estado={props.match.estado} cronometro={props.match.cronometro} />
                 <Equipo escudo={props.match.escudo_local} equipo={props.match.local} rojas={props.match.rojas_local} />
                 <Goles goles={props.match.goles_local} />
@@ -52,7 +55,9 @@ const Match = (props) => {
                         <></>
 
                 }
+                
 
+                
 
             </div>
 

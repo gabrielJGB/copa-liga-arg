@@ -2,7 +2,7 @@ import React, { useContext, useEffect, useState } from 'react'
 import { StandingsTable, Fixture, FixtureArrows, FixtureButtons, Bracket, MatchModal, Historial } from '../components'
 import { DataContext } from '../context/DataContext'
 
-
+import Table from 'react-bootstrap/Table'
 const Home = () => {
   const data = useContext(DataContext)
 
@@ -65,6 +65,7 @@ const Home = () => {
           </>
 
       }
+
 
     </div>
 

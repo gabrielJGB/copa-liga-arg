@@ -1,9 +1,11 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import DataProvider from '../context/DataContext'
 import Home from '../pages/Home'
+import Liga from '../pages/Liga'
 import Layout from '../pages/Layout'
 
 import './styles/styles.scss'
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 const App = () => {
 
@@ -14,6 +16,7 @@ const App = () => {
         <Routes>
           <Route path="/" element={<Layout />}>
             <Route index element={<Home />} />
+            {/* <Route path="/liga" element={<Liga />} /> */}
           </Route>
         </Routes>
       </BrowserRouter>

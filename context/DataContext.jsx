@@ -12,14 +12,14 @@ export const DataContext = createContext({
   error: null,
   matchDisplay: null,
   setMatchDisplay: () => { },
-  openHistory:null, 
-  setOpenHistory:()=>{},
-  selectedTeam:null, 
-  setSelectedTeam:()=>{},
-  infoPartidos:null,
-  setInfoPartidos:()=>{},
-  planteles:null,
-   setPlanteles:()=>{}
+  openHistory: null,
+  setOpenHistory: () => { },
+  selectedTeam: null,
+  setSelectedTeam: () => { },
+  infoPartidos: null,
+  setInfoPartidos: () => { },
+  planteles: null,
+  setPlanteles: () => { }
 
 })
 
@@ -33,11 +33,13 @@ export function DataProvider({ children }) {
   const [matchDisplay, setMatchDisplay] = useState(false)
   const [openHistory, setOpenHistory] = useState(false)
   const [selectedTeam, setSelectedTeam] = useState(false)
-  const[infoPartidos,setInfoPartidos] = useState(false)
+  const [infoPartidos, setInfoPartidos] = useState(false)
   const [planteles, setPlanteles] = useState(false)
+  const [idAPI, setIdAPI] = useState(false)
+  const [comments,setComents] = useState(false)
 
   let interval = null
-  
+
   // useEffect(() => {
   //   //fetchScores() descomentar
   //   setTimeout(() => {
@@ -48,7 +50,45 @@ export function DataProvider({ children }) {
   //   }, 5000);
   // }, [])
 
+//   useEffect(() => {
+//     fetch("https://site.api.espn.com/apis/site/v2/sports/soccer/arg.copa_lpf/scoreboard")
+//       .then(resp => resp.json())
+//       .then(parsed => {
+//         let x = parsed.events.map(a =>  {return {"id":a.id, "finalizado":a.status.type.completed} })
+//         setIdAPI(x)
+//       })
+//       .catch(error => console.error(error))
 
+//   }, [])
+
+//   useEffect(() => {
+
+//     let arr = []
+//     if (idAPI) {
+//       idAPI.forEach(id => {
+//         fetch(`https://site.api.espn.com/apis/site/v2/sports/soccer/all/summary?region=ar&lang=es&contentorigin=deportes&event=${id}`)
+//           .then(resp => resp.json())
+//           .then(parsed => {
+            
+//             arr.push({"id":id,"comments":parsed.commentary})
+            
+//           })
+//           .then(()=>{
+
+//             setComents(arr)
+
+
+//           })
+//           .catch(error => console.error(error))
+
+
+//       })
+//     }
+//   }, [idAPI])
+
+// useEffect(() => {
+//   console.log(comments)
+// }, [comments])
 
 
 
@@ -82,31 +122,31 @@ export function DataProvider({ children }) {
         setTablas(getTablasPuntos(parsed.fechas))
         fetchScores()
       })
-      
+
       .catch(error => {
         console.error(error)
         setError(error)
       })
 
 
-      fetch("https://gabrieljgb.github.io/pr-task/fichas.json")
+    fetch("https://gabrieljgb.github.io/pr-task/fichas.json")
       .then(resp => resp.json())
-      .then(parsed =>  setInfoPartidos(parsed) )
+      .then(parsed => setInfoPartidos(parsed))
       .catch(error => {
         console.error(error)
         setError(error)
       })
 
-      fetch("https://gabrieljgb.github.io/pr-task/planteles.json")
+    fetch("https://gabrieljgb.github.io/pr-task/planteles.json")
       .then(resp => resp.json())
-      .then(parsed =>  setPlanteles(parsed) )
+      .then(parsed => setPlanteles(parsed))
       .catch(error => {
         console.error(error)
         setError(error)
       })
 
-      
-   
+
+
   }, [])
 
   const updatePartidosJugando = () => {
@@ -198,14 +238,14 @@ export function DataProvider({ children }) {
   const fetchScores = () => {
 
     let date = new Date().getTime()
-    
+
 
     let url = "https://api.allorigins.win/raw?url=https://www.promiedos.com.ar/scores84mjd7.json?_=" + date
     // let url = "https://cors-proxy-alt.onrender.com/https://www.promiedos.com.ar/scores84mjd7.json_=" +date
     let req_info = { headers: { 'X-Requested-With': 'XMLHttpRequest' } }
 
 
-    fetch(url,req_info)
+    fetch(url, req_info)
       .then(resp => resp.json())
       .then(parsed => {
 
@@ -395,15 +435,15 @@ export function DataProvider({ children }) {
     error,
     matchDisplay,
     setMatchDisplay,
-    openHistory, 
+    openHistory,
     setOpenHistory,
-    selectedTeam, 
+    selectedTeam,
     setSelectedTeam,
     infoPartidos,
     setInfoPartidos,
-    planteles, 
+    planteles,
     setPlanteles
-    
+
 
   }
 

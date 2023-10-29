@@ -1,6 +1,6 @@
 .standings-table_container {
     font-size: 12px;
-
+    
     th {
         background-color: #121212;
         text-align: center;
@@ -9,7 +9,7 @@
     }
 
     td {
-        
+
         text-align: center;
     }
 }
@@ -28,25 +28,51 @@
 
 .standings-table_row {
 
-    
+
+    .dot {
+        display: flex;
+        height: 8px;
+        width: 8px;
+        border-radius: 4px;
+        margin-left: 5px;
+        animation: blinkingDot 1.2s infinite;
+    }
+
     transition: all 0.2s;
     cursor: pointer;
 
     &:hover {
         transform: translateX(10px);
-    
+
     }
 }
 
+@keyframes blinkingDot {
+    0% {
+      transform: scale(1);
+  
+    }
+  
+    50% {
+      transform: scale(0.5);
+  
+    }
+  
+    100% {
+      transform: scale(1);
+    }
+  }
+
 @media screen and (max-width: 800px) {
     .table>:not(caption)>*>* {
-        margin:1px;
+        margin: 1px;
         padding: 0.6rem 0.2rem;
     }
-    
-    .standings-table_row{
+
+    .standings-table_row {
         transform: translateX(0);
-        &:hover{
+
+        &:hover {
             transform: translateX(0);
         }
     }
@@ -54,4 +80,3 @@
 
 
 }
-

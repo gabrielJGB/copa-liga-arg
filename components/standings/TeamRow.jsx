@@ -33,6 +33,9 @@ const TeamRow = (props) => {
 
     const isPlaying = (equipo) => {
         let playing = data.obj.fechas.filter(fecha => fecha.partidos.some(partido => (partido.estado === "jugando") && (partido.local === equipo || partido.visitante === equipo)))
+
+        
+        
         return playing.length ? true : false
     }
 
