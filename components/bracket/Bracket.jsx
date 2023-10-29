@@ -30,7 +30,7 @@ const Bracket = (props) => {
 
   return (
     <div className='bracket'>
-      <h4>Llaves (al momento)</h4>
+      <h4 className='bracket_title'>Llaves (al momento)</h4>
       <div className="bracket_grid">
 
 

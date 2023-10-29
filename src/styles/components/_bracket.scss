@@ -147,8 +147,12 @@
     font-weight: bold;
 }
 
-.bracket h4{
+.bracket_title{
     background-color: transparent;
-    color: white;
+    color: white !important;
     text-align: center;
+    cursor: unset;
+    &:hover{
+        background-color: transparent;
+    }
 }
