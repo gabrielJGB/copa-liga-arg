@@ -1,19 +1,20 @@
 {
-    "name": "Copa de la Liga 2023",
-    "short_name": "CopaDeLaLiga",
-    "description": "Copa de la Liga 2023",
-    "theme_color": "#004b7a",
-    "background_color" : "#004b7a",
-    "icons": [
-      {
-        "src": "pwa-192x192.png",
-        "sizes": "192x192",
-        "type": "image/png"
-      },
-      {
-        "src": "pwa-512x512.png",
-        "sizes": "512x512",
-        "type": "image/png"
-      }
-    ]
-  }
+  "version": "1.0.1",
+  "name": "Copa de la Liga 2023",
+  "short_name": "CopaDeLaLiga",
+  "description": "Copa de la Liga 2023",
+  "theme_color": "#004b7a",
+  "background_color": "#004b7a",
+  "icons": [
+    {
+      "src": "pwa-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "pwa-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

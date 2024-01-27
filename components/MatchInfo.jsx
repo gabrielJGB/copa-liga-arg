@@ -16,6 +16,7 @@ const MatchInfo = (props) => {
     const [playerShow, setPlayerShow] = useState(false)
     const [selectedPlayer, setSelectedPlayer] = useState(false)
     const [playerObj, setPlayerObj] = useState(false)
+    const [section, set_section] = useState(1)
 
 
     useEffect(() => {
@@ -267,12 +268,25 @@ const MatchInfo = (props) => {
 
             <div className='match-info_body'>
 
-                <div className="match-info_formaciones">
-                    <h4 onClick={() => {
-                        setDisplaySeccion1(prev => prev == "block" ? "none" : "block")
-                    }} >
-                        FORMACIONES
-                    </h4>
+                <div className="match-info_menu">
+                    <div 
+                    className={`${section===1&&"selected"}`}
+                    onClick={()=>{set_section(1)}}>Formaciones</div>
+
+                    <div 
+                    className={`${section===2&&"selected"}`}
+                    onClick={()=>{set_section(2)}}>Estadísticas</div>
+
+                    <div 
+                    className={`${section===3&&"selected"}`}
+                    onClick={()=>{set_section(3)}}>Cronología</div>
+
+                </div>
+
+                <div 
+                style={{display:(section===1? "block":"none")}}
+                className="match-info_formaciones">
+  
 
                     <div style={{ display: displaySeccion1 }} className="match-info_seccion">
 
@@ -327,12 +341,10 @@ const MatchInfo = (props) => {
 
                 </div>
 
-                <div className="match-info_estadisticas">
-                    <h4 onClick={() => {
-                        setDisplaySeccion2(prev => prev == "block" ? "none" : "block")
-                    }} >
-                        ESTADÍSTICAS
-                    </h4>
+                <div 
+                style={{display:(section===2? "block":"none")}}
+                className="match-info_estadisticas">
+              
 
                     <div style={{ display: displaySeccion2 }} className="match-info_seccion">
                         {
@@ -354,12 +366,10 @@ const MatchInfo = (props) => {
                     </div>
                 </div>
 
-                <div className="match-info_incidencias">
-                    <h4 onClick={() => {
-                        setDisplaySeccion3(prev => prev == "block" ? "none" : "block")
-                    }} >
-                        CRONOLOGÍA
-                    </h4>
+                <div 
+                style={{display:(section===3? "block":"none")}}
+                className="match-info_incidencias">
+           
 
                     <div style={{ display: displaySeccion3 }} className="match-info_seccion">
                         {
@@ -452,6 +462,8 @@ const MatchInfo = (props) => {
                 }
                 <div></div>
             </div>
+
+
         </div>
     )
 }

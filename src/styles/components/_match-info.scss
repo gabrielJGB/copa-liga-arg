@@ -1,4 +1,4 @@
-$background: black;
+$background: rgb(14, 14, 14);
 $color: white;
 
 h4 {
@@ -12,7 +12,7 @@ h4 {
     cursor: pointer;
 }
 
-h4:hover{
+h4:hover {
     background-color: #c5c5c5;
 }
 
@@ -22,6 +22,7 @@ h5 {
 
 
 .match-info_container {
+
     position: relative;
     background-color: #21273b;
     width: 100%;
@@ -39,7 +40,7 @@ h5 {
     background-color: $background;
     box-shadow: 0 0 10px black;
     color: $color;
-    height: 8vh;
+    height: 7vh;
     position: sticky;
     top: 0;
 
@@ -72,11 +73,35 @@ h5 {
 
 .match-info_seccion {
 
-    display: block;
+
 
     overflow: hidden;
     transition: max-height 0.2s ease-out;
 
+}
+
+.match-info_menu {
+    display: flex;
+    flex-direction: row;
+    width: 97%;
+    margin: 10px auto 5px auto;
+    align-items: center;
+    justify-content: space-between;
+    
+
+    &>div {
+
+        color: white;
+        background-color: rgb(17, 17, 17) ;
+        padding: 10px;
+        border-radius: 3px;
+    }
+
+    .selected {
+        background-color: white;
+        color: black;
+
+    }
 }
 
 
@@ -204,10 +229,12 @@ h5 {
             border-style: solid;
             border-width: 0 0 0 4px;
 
-            cursor:pointer;
-            &:hover{
+            cursor: pointer;
+
+            &:hover {
                 background-color: #161925;
             }
+
             .jugador-left {
                 display: flex;
                 flex-direction: row;
@@ -228,7 +255,7 @@ h5 {
                 border: solid 1px #e2e2e27a;
                 color: white;
                 border-radius: 6px;
-                
+
                 min-width: 22px;
             }
 
@@ -241,7 +268,7 @@ h5 {
             .nombre {
                 display: flex;
                 flex-direction: row;
-                gap:3px;
+                gap: 3px;
                 align-items: center;
             }
         }
@@ -253,7 +280,7 @@ h5 {
 }
 
 
-.match-info_player{
+.match-info_player {
     z-index: 20;
     height: 20vh;
     bottom: 0;
@@ -262,7 +289,7 @@ h5 {
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
-    
+
     align-items: center;
     bottom: 0;
     background-color: #0e0e0ef5;
@@ -272,12 +299,12 @@ h5 {
     border-top-left-radius: 10px;
     cursor: pointer;
 
-    .img{
+    .img {
         min-height: 200px;
     }
-    
-    
-   
+
+
+
 }
 
 
@@ -286,20 +313,21 @@ h5 {
         border-radius: 0;
     }
 
-    .match-info_player{
-        h3{
+    .match-info_player {
+        h3 {
             font-size: 21px;
         }
-        div{
+
+        div {
             font-size: 13px;
         }
-        
-        .img{
+
+        .img {
             min-height: 90px;
-        }   
+        }
     }
 
-    
+
 
 
 }
