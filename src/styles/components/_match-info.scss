@@ -94,10 +94,14 @@ h5 {
         color: white;
         background-color: rgb(17, 17, 17) ;
         padding: 10px;
-        border-radius: 3px;
+        // border-radius: 3px;
+        cursor:pointer;
+        width:99%;
+        text-align: center;
     }
 
     .selected {
+        transition: all 0.3s;
         background-color: white;
         color: black;
 
@@ -106,7 +110,7 @@ h5 {
 
 
 .match-info_estadisticas {
-    padding: 5px;
+    padding: 5px 7px;
 
     .estadistica {
         margin-bottom: 10px;

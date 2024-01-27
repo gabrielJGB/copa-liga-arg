@@ -3,7 +3,13 @@
 .home_container {
     background-color: #302f2f;
 }
+.home_cargando-container{
+    display:flex;
+    justify-content: center;
 
+    margin:40px auto;
+
+}
 .home_main-container{
     display: grid;
     grid-template-columns: 1fr 1fr;

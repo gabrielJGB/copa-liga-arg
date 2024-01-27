@@ -3,6 +3,7 @@ import { StandingsTable, Fixture, FixtureArrows, FixtureButtons, Bracket, MatchM
 import { DataContext } from '../context/DataContext'
 
 import Table from 'react-bootstrap/Table'
+import { Spinner } from 'react-bootstrap'
 const Home = () => {
   const data = useContext(DataContext)
 
@@ -21,7 +22,10 @@ const Home = () => {
 
   if (data.cargando) {
     return (
-      <div style={{padding:"20px"}}> Cargando...</div>
+      
+      <div className='home_cargando-container'>
+          <Spinner size="lg" style={{width:50,height:50}}/>
+      </div>
     )
   }
 
