@@ -18,7 +18,7 @@ const NavBar = () => {
             height="30"
             className="d-inline-block align-top"
           />{' '}
-          <Link to="/" className="navbar-link">Copa de la Liga 2023</Link>
+          <Link to="/" className="navbar-link">Copa de la Liga 2024</Link>
         </Navbar.Brand>
 
       </Container>
